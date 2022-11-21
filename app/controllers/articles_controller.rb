@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
   def index
-   render json: {message: "Hello Articles!"}
+    @articles = Article.all
+    render json: @articles
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
 end
